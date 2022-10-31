@@ -1,5 +1,29 @@
 {
   "dependencies": {
-    "inquirer": "^9.1.4"
+    "express": "^4.18.2",
+    "inquirer": "^9.1.4",
+    "mysql2": "^2.3.3"
+  },
+  "name": "employee-tracker",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TyFB/employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TyFB/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/TyFB/employee-tracker#readme",
+  "devDependencies": {
+    "jest": "^29.2.2"
   }
 }
