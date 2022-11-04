@@ -3,6 +3,6 @@ const router = express.Router();
 
 router.use(require('./employeesRoutes'));
 router.use(require('./rolesRoutes'));
-//router.use(require('./departmentsRoutes'));
+router.use(require('./departmentsRoutes'));
 
 module.exports = router;
