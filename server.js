@@ -19,8 +19,12 @@ const db = mysql.createConnection(
     console.log('Connected to the database.')
 );
 
-app.get('/api/employee', (req, res) => {
-    const sql = `SELECT * FROM employee`;
+app.get('/api/employees', (req, res) => {
+    const sql = `SELECT employees.*, roles.title
+    AS title
+    FROM employees
+    LEFT JOIN roles
+    ON  employees.role_id = roles.id`;
     db.query(sql, (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -34,8 +38,13 @@ app.get('/api/employee', (req, res) => {
     });
 });
 
-app.get('/api/employee/:id', (req, res) => {
-    const sql = `SELECT * FROM employee WHERE id = ?`;
+app.get('/api/employees/:id', (req, res) => {
+    const sql = `SELECT employees.*, roles.title 
+    AS title
+    FROM employees
+    LEFT JOIN roles
+    ON employees.role_id = roles.id
+    WHERE employees.id = ?`;
     const params = [req.params.id];
     db.query(sql, params, (err, row) => {
         if (err) {
